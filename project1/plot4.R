@@ -15,7 +15,7 @@ range<-dfData[with(dfData, Date=="1/2/2007"|Date=="2/2/2007"), ]
 #merge covert date and Time column to date format
 dateTime <- strptime( paste(range$Date,range$Time), format="%d/%m/%Y %H:%M:%S")
 range$Datetime <- dateTime
-png(file="plot3.png")
+png(file="plot4.png")
 par(mfcol=c(2,2))
 #First plot
 with(range,plot(range$Datetime,range$Global_active_power,type="s",ylab="Global Active Power(kilowatts)",xlab=""))
