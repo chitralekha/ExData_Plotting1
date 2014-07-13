@@ -15,6 +15,8 @@ range<-dfData[with(dfData, Date=="1/2/2007"|Date=="2/2/2007"), ]
 #merge covert date and Time column to date format
 dateTime <- strptime( paste(range$Date,range$Time), format="%d/%m/%Y %H:%M:%S")
 range$Datetime <- dateTime
+
+#Plot to the file directly to get a better resolution
 png(file="plot4.png")
 par(mfcol=c(2,2))
 #First plot
@@ -27,5 +29,5 @@ legend("topright", lty = 1, bty="n",col = c("black", "red", "blue"), legend = c(
 #3rd plot
 with(range,plot(range$Datetime,range$Voltage,type="l",xlab="datetime",ylab="Voltage",col="black"))
 #4th plot
-with(plot(range$Datetime,range$Global_reactive_power,type="l",xlab="datetime",ylab="Voltage",col="black"))
+with(range,plot(range$Datetime,range$Global_reactive_power,type="l",xlab="datetime",ylab="Voltage",col="black"))
 dev.off()

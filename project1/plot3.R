@@ -15,7 +15,7 @@ range<-dfData[with(dfData, Date=="1/2/2007"|Date=="2/2/2007"), ]
 #merge covert date and Time column to date format
 dateTime <- strptime( paste(range$Date,range$Time), format="%d/%m/%Y %H:%M:%S")
 range$Datetime <- dateTime
-
+#Plot to the file directly to get a better resolution
 png(file="plot3.png")
 #Draw the plot
 with(range,plot(range$Datetime,range$Sub_metering_1,type = "l", xlab = "", ylab = "Energy sub metering", col = "black"))
