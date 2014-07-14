@@ -29,5 +29,5 @@ legend("topright", lty = 1, bty="n",col = c("black", "red", "blue"), legend = c(
 #3rd plot
 with(range,plot(range$Datetime,range$Voltage,type="l",xlab="datetime",ylab="Voltage",col="black"))
 #4th plot
-with(range,plot(range$Datetime,range$Global_reactive_power,type="l",xlab="datetime",ylab="Voltage",col="black"))
+with(range,plot(range$Datetime,range$Global_reactive_power,type="l",xlab="datetime",ylab="Global_reactive_power",col="black"))
 dev.off()
